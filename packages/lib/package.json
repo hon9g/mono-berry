@@ -1,0 +1,9 @@
+{
+  "name": "@pkg/lib",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "packageManager": "yarn@3.3.0",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  }
+}

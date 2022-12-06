@@ -18,12 +18,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@cute/web",\
         "reference": "workspace:apps/web"\
+      },\
+      {\
+        "name": "@pkg/lib",\
+        "reference": "workspace:packages/lib"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["@cute/web", ["workspace:apps/web"]],\
+      ["@pkg/lib", ["workspace:packages/lib"]],\
       ["mono-berry", ["workspace:."]]\
     ],\
     "fallbackPool": [\
@@ -289,6 +294,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fastq", "npm:1.14.0"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@pkg/lib", [\
+        ["workspace:packages/lib", {\
+          "packageLocation": "./packages/lib/",\
+          "packageDependencies": [\
+            ["@pkg/lib", "workspace:packages/lib"],\
+            ["typescript", "patch:typescript@npm%3A4.9.3#~builtin<compat/typescript>::version=4.9.3&hash=d73830"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["@pkgr/utils", [\
