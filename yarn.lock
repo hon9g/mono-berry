@@ -1732,6 +1732,8 @@ __metadata:
 "mono-berry@workspace:.":
   version: 0.0.0-use.local
   resolution: "mono-berry@workspace:."
+  dependencies:
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
