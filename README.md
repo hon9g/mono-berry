@@ -33,7 +33,35 @@ yarn init -w
 
 ## workspace 추가하기
 
-1. 원하는 위치에 하위 폴더를 생성한다.
-2. `./packages.json` 의 workspace에 해당 위치를 추가한다.
+1. 원하는 위치에 하위 폴더를 생성.
+2. `./packages.json` 의 workspace에 해당 위치를 추가.
 
-그러고나면 `yarn workspace [프로젝트 이름]` 으로 접근할 수 있다.
+그러고나면 `yarn workspace [프로젝트 이름]` 으로 접근할 수 있습니다.
+
+## 내부 패키지 의존성 추가하기
+
+외부 패키지의 경우 여타 프로젝트에서 사용했던 것과 같이 `yarn add [패키지 이름]` 하면 됩니다.
+workspace @cute/web 에서 다른 workspace에 위치한 @pkg/lib를 의존하려면 어떻게 해야할까요?
+
+1. 우선 @pkg/lib 에서 export 하고 있는 모듈이 있어야 한다.
+2. @cute/web에 @pkg/lib 의존성을 추가한다.
+
+```bash
+yarn workspace @cute/web add @pkg/lib
+```
+
+3. (TS를 사용하는 경우) 타입스크립트 컴파일러 설정에서 패키지 위치를 알려준다.
+
+@cute/web/tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    (...)
+    "paths": {
+      "@pkg/lib": ["../../package/lib/src/index"]
+    }
+  },
+  (...)
+}
+```
