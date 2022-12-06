@@ -30,3 +30,10 @@ yarn init -w
 `-w` flag와 함께 초기화해주면 `package.json` 파일이 자동 생성됨.
 프로젝트 root에 위치한 `package.json`의 `workspace`에 추가된 위치들을 개별 프로젝트로 취급함.
 위 커맨드로 `package.json` 생성시 workspace에 이미 `packages` 라는 폴더 위치가 추가되어 있음.
+
+## workspace 추가하기
+
+1. 원하는 위치에 하위 폴더를 생성한다.
+2. `./packages.json` 의 workspace에 해당 위치를 추가한다.
+
+그러고나면 `yarn workspace [프로젝트 이름]` 으로 접근할 수 있다.
