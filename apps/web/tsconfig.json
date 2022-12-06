@@ -15,6 +15,9 @@
     "jsx": "preserve",
     "incremental": true,
     "noImplicitAny": false,
+    "paths": {
+      "@pkg/lib": ["../../package/lib/src/index"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
