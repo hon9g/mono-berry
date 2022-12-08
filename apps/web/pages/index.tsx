@@ -1,7 +1,7 @@
+import { sayHello } from '@pkg/lib';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import { sayHello } from '@pkg/lib';
 
 export default function Home() {
   sayHello();
