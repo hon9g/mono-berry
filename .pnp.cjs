@@ -22,11 +22,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@pkg/lib",\
         "reference": "workspace:packages/lib"\
+      },\
+      {\
+        "name": "@cute/ui",\
+        "reference": "workspace:packages/ui"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["@cute/ui", ["workspace:packages/ui"]],\
       ["@cute/web", ["workspace:apps/web"]],\
       ["@pkg/lib", ["workspace:packages/lib"]],\
       ["mono-berry", ["workspace:."]]\
@@ -71,6 +76,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["regenerator-runtime", "npm:0.13.11"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@cute/ui", [\
+        ["workspace:packages/ui", {\
+          "packageLocation": "./packages/ui/",\
+          "packageDependencies": [\
+            ["@cute/ui", "workspace:packages/ui"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["@cute/web", [\
